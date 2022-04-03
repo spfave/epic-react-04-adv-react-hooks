@@ -1,0 +1,13 @@
+# Advanced React Hooks
+
+## 01: useReducer
+When managing an independent element of state using a stand alone state and state setter is advantageous  
+When one element of state relies on another element of state for updating using a reducer function is advantageous  
+Input to reducer function  
+1. state: the current state
+2. action: value that that is passed to the updater function (dispatch function), alternately whatever is passed to the dispatch function will be th second argument to the reducer function  
+
+Input to useReducer hook  
+1. reducer function
+2. initial state value
+3. optional: initializer function (lazy compute initial state)
