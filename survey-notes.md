@@ -11,3 +11,6 @@ Input to useReducer hook
 1. reducer function
 2. initial state value
 3. optional: initializer function (lazy compute initial state)
+
+## 02: useCallback 
+Memoization is a performance optimization technique which eliminates the need to recompute an output for a previously provided input. This is done by storing input(s) and its corresponding output in storage and checking provide inputs against the storage and returning the matching output for matching inputs  

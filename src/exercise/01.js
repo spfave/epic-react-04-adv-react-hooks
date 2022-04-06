@@ -13,6 +13,7 @@ function countReducer(state, action) {
   // return {...state, ...newState} // EC2
   // return {...state, ...(typeof action === 'function' ? action(state) : action)} // EC3
   switch (action.type) {
+    // EC4
     case 'INCREMENT': {
       return {...state, count: state.count + action.step}
     }
