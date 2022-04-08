@@ -13,4 +13,5 @@ Input to useReducer hook
 3. optional: initializer function (lazy compute initial state)
 
 ## 02: useCallback 
-Memoization is a performance optimization technique which eliminates the need to recompute an output for a previously provided input. This is done by storing input(s) and its corresponding output in storage and checking provide inputs against the storage and returning the matching output for matching inputs  
+Memoization is a performance optimization technique which eliminates the need to recompute an output for a previously provided input. This is done by storing input(s) and its corresponding output in storage and checking provided inputs against the storage and returning the matching output for matching inputs if it exists  
+The purpose of useMemo and useCallback is to memoize values and functions in dependency list and props on memoized components   
