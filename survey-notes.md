@@ -18,6 +18,7 @@ The purpose of useMemo and useCallback is to memoize values and functions in dep
 
 ## 03: useContext
 The react context API allows for the creation of a store of data and/or functionality that can be accessed anywhere within the children of the context.  
+A React context store can be scoped to a specific section of the React component tree. Within its scope the context default value can be overwritten by nesting another context of the same type with a different default  
 To create and use a React context the following APIs are used  
 1. createContext: to create the context store 
 2. useContext: React hook to access a context store from within a child component of a context
