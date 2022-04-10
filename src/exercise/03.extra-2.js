@@ -28,6 +28,7 @@ function pokemonCacheReducer(state, action) {
 
 // 🐨 Create a PokemonCacheContext
 const PokemonCacheContext = React.createContext()
+PokemonCacheContext.displayName = 'PokemonCache'
 
 // 🐨 create a PokemonCacheProvider function
 // 🐨 useReducer with pokemonCacheReducer in your PokemonCacheProvider
@@ -45,11 +46,22 @@ function PokemonCacheProvider(props) {
   )
 }
 
+function useValidContext(context) {
+  const contextValue = React.useContext(context)
+  if (!contextValue) {
+    throw Error(
+      `${context.displayName} must be used in a ${context.displayName}Provider`,
+    )
+  }
+  return contextValue
+}
+
 function PokemonInfo({pokemonName}) {
   // 💣 remove the useReducer here (or move it up to your PokemonCacheProvider)
   // const [cache, dispatch] = React.useReducer(pokemonCacheReducer, {})
   // 🐨 get the cache and dispatch from useContext with PokemonCacheContext
-  const [cache, dispatch] = React.useContext(PokemonCacheContext)
+  // const [cache, dispatch] = React.useContext(PokemonCacheContext)
+  const [cache, dispatch] = useValidContext(PokemonCacheContext)
 
   const {data: pokemon, status, error, run, setData} = useAsync()
 
@@ -66,7 +78,7 @@ function PokemonInfo({pokemonName}) {
         }),
       )
     }
-  }, [cache, pokemonName, run, setData])
+  }, [cache, dispatch, pokemonName, run, setData])
 
   if (status === 'idle') {
     return 'Submit a pokemon'
@@ -82,7 +94,8 @@ function PokemonInfo({pokemonName}) {
 function PreviousPokemon({onSelect}) {
   // 🐨 get the cache from useContext with PokemonCacheContext
   // const cache = {}
-  const [cache] = React.useContext(PokemonCacheContext)
+  // const [cache] = React.useContext(PokemonCacheContext)
+  const [cache] = useValidContext(PokemonCacheContext)
 
   return (
     <div>
