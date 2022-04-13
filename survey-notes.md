@@ -29,4 +29,11 @@ Input to createContext
 Input to useContext  
 1. name of a context store
 
-## 04: use
+## 04: useLayoutEffect
+useLayoutEffect is used very similar to useEffect with an equivalent API interface  
+The major difference is that layout effect runs synchronously after React performs DOM mutations and before the browser completes paints the screen, whereas effect runs after the browser paints the screen    
+Use cases for useLayoutEffect over useEffect are  
+1. if the effect function will mutate the DOM and cause an appearance change (e.g. DOM mutations requiring DOM measurements)
+2. Special case: To ensure a specific effect occurs before other effects 
+
+
