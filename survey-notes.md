@@ -36,4 +36,8 @@ Use cases for useLayoutEffect over useEffect are
 1. if the effect function will mutate the DOM and cause an appearance change (e.g. DOM mutations requiring DOM measurements)
 2. Special case: To ensure a specific effect occurs before other effects 
 
+## 05: useImperativeHandle
+This hook allows the exposure of imperative methods to developers who pass a ref prop to a component. Exposing imperative methods of a ref allows a parent component to call those imperative methods directly.  
+This hook should only be used if a declarative solution can not be accomplished  
+Personal note: Instead of forward ref think of as "back ref to parent"
 
