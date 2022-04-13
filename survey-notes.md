@@ -15,6 +15,9 @@ Input to useReducer hook
 ## 02: useCallback 
 Memoization is a performance optimization technique which eliminates the need to recompute an output for a previously provided input. This is done by storing input(s) and its corresponding output in storage and checking provided inputs against the storage and returning the matching output for matching inputs if it exists  
 The purpose of useMemo and useCallback is to memoize values and functions in dependency list and props on memoized components   
+Input to useCallback  
+1. callback function to return
+2. dependency array for callback function to which to check equivalency of inputs
 
 ## 03: useContext
 The react context API allows for the creation of a store of data and/or functionality that can be accessed anywhere within the children of the context.  
@@ -40,4 +43,11 @@ Use cases for useLayoutEffect over useEffect are
 This hook allows the exposure of imperative methods to developers who pass a ref prop to a component. Exposing imperative methods of a ref allows a parent component to call those imperative methods directly.  
 This hook should only be used if a declarative solution can not be accomplished  
 Personal note: Instead of forward ref think of as "back ref to parent"
+
+## 06: useDebugValue
+Useful to identify custom hooks in React dev tools  
+Input to useDebugValue
+1. a string value to display in the React dev tools, can show variables using a string literal
+2. optional: a formatting function, this is a optimization feature if computing the debug value is expensive
+
 
