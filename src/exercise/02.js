@@ -36,6 +36,7 @@ function asyncReducer(state, action) {
 function useSafeDispatch(unsafeDispatch) {
   const mountedRef = React.useRef(false)
 
+  // UseLayoutEffect to ensure it runs before any useEffects
   React.useLayoutEffect(() => {
     mountedRef.current = true
     return () => {
